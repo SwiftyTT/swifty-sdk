@@ -1,6 +1,7 @@
 {
   "name": "swifty-sdk",
   "version": "1.0.0",
+  "type": "module",
   "description": "SDK for integrating Swifty into web applications",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
@@ -21,11 +22,14 @@
   "scripts": {
     "clean": "rimraf dist",
     "build:esm": "tsc",
-    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:cjs": "tsc -p tsconfig.cjs.json && renamer --find /\\.js$/ --replace .cjs \"dist/cjs/*\"",
     "build:umd": "webpack",
     "build:min": "terser dist/umd/swifty.min.js -c -m -o dist/umd/swifty.min.js",
     "build": "npm run clean && npm run build:esm && npm run build:cjs && npm run build:umd && npm run build:min",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "test:esm": "node test/esm-test.mjs",
+    "test:cjs": "node test/cjs-test.cjs",
+    "test": "npm run test:esm && npm run test:cjs"
   },
   "keywords": [
     "swifty",
@@ -50,6 +54,7 @@
     "terser": "^5.37.0",
     "typescript": "^5.0.0",
     "webpack": "^5.97.1",
-    "webpack-cli": "^5.1.4"
+    "webpack-cli": "^5.1.4",
+    "renamer": "^4.0.0"
   }
 }
