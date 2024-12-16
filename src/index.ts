@@ -27,7 +27,7 @@ class Swifty {
   
   constructor(options: ClientOptions) {
     this.apiKey = options.apiKey;
-    this.swiftyUrl = options.swiftyUrl || 'https://widget.example.com';
+    this.swiftyUrl = options.swiftyUrl || 'https://app.swifty.so';
   }
 
   private buildUrl(message?: string): string {
