@@ -1,0 +1,55 @@
+{
+  "name": "swifty-sdk",
+  "version": "1.0.0",
+  "description": "SDK for integrating Swifty into web applications",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "unpkg": "./dist/umd/swifty.min.js",
+  "jsdelivr": "./dist/umd/swifty.min.js",
+  "browser": "./dist/umd/swifty.min.js",
+  "exports": {
+    ".": {
+      "require": "./dist/cjs/index.js",
+      "import": "./dist/esm/index.js",
+      "types": "./dist/esm/index.d.ts"
+    }
+  },
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "clean": "rimraf dist",
+    "build:esm": "tsc",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:umd": "webpack",
+    "build:min": "terser dist/umd/swifty.min.js -c -m -o dist/umd/swifty.min.js",
+    "build": "npm run clean && npm run build:esm && npm run build:cjs && npm run build:umd && npm run build:min",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "swifty",
+    "sdk",
+    "widget",
+    "speech-recognition"
+  ],
+  "author": "Swifty Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tprzedmojski/swifty-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tprzedmojski/swifty-sdk/issues"
+  },
+  "homepage": "https://github.com/tprzedmojski/swifty-sdk#readme",
+  "devDependencies": {
+    "@types/dom-speech-recognition": "^0.0.4",
+    "@types/node": "^20.0.0",
+    "rimraf": "^5.0.0",
+    "terser": "^5.37.0",
+    "typescript": "^5.0.0",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^5.1.4"
+  }
+}
