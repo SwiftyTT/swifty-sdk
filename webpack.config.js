@@ -9,8 +9,11 @@ export default {
   output: {
     filename: 'swifty.min.js',
     path: path.resolve(__dirname, 'dist/umd'),
-    library: 'Swifty',
-    libraryTarget: 'umd',
+    library: {
+      name: 'Swifty',
+      type: 'umd',
+      export: 'default'
+    },
     globalObject: 'this'
   },
   mode: 'production'
