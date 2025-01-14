@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swifty IFRAME static test page</title>
+    <!-- Include vendor library -->
+    <script src="/swifty.min.js" defer></script>
+    <style>
+        /* Reset default margins and ensure full height */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        #swifty-iframe-container {
+            width: 100%;
+            height: 100vh;
+            background-color: white;
+            position: relative;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div id="swifty-iframe-container"></div>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        if (typeof Swifty === 'function') {
+          var swifty = new Swifty({ apiKey: 'test-api-key' });
+          swifty.loadWidget({ 
+            selector: '#swifty-iframe-container',
+            message: 'Hi!' 
+          });
+        } else {
+            console.error('Swifty client library not loaded properly');
+        }
+    });
+    </script>
+</body>
+</html>
