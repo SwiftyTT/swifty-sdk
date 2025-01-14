@@ -64,9 +64,6 @@ class Swifty {
       const loaded = new Promise<boolean>((resolve, reject) => {
         iframe.onload = () => resolve(true);
         iframe.onerror = () => reject(new Error('Failed to load widget'));
-        
-        // Timeout after 10 seconds
-        setTimeout(() => reject(new Error('Widget load timeout')), 10000);
       });
 
       // Append iframe to container
