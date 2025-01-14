@@ -54,6 +54,8 @@ class Swifty {
       // Create and configure iframe
       const iframe = document.createElement('iframe');
       iframe.style.width = '100%';
+      iframe.style.minWidth = '390px';
+      iframe.style.minHeight = '844px';
       iframe.style.height = '100%';
       iframe.style.border = 'none';
       iframe.src = this.buildUrl(options.message);
