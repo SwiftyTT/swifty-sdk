@@ -1,6 +1,6 @@
 {
   "name": "swifty-sdk",
-  "version": "1.0.0-beta.0",
+  "version": "1.0.0",
   "type": "module",
   "description": "SDK for integrating Swifty into web applications",
   "main": "./dist/cjs/index.js",
@@ -41,12 +41,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tprzedmojski/swifty-sdk.git"
+    "url": "git+https://github.com/SwiftyTT/swifty-sdk.git"
   },
   "bugs": {
-    "url": "https://github.com/tprzedmojski/swifty-sdk/issues"
+    "url": "https://github.com/SwiftyTT/swifty-sdk/issues"
   },
-  "homepage": "https://github.com/tprzedmojski/swifty-sdk#readme",
+  "homepage": "https://github.com/SwiftyTT/swifty-sdk#readme",
   "devDependencies": {
     "@types/dom-speech-recognition": "^0.0.4",
     "@types/node": "^20.0.0",
